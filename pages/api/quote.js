@@ -2,6 +2,7 @@
 import axios from "axios";
 
 export default async function handler(req, res) {
+    const apiKey = process.env.OPENAI_API_KEY;
   if (req.method === "POST") {
     const { topic, language } = req.body;
 
@@ -29,7 +30,7 @@ export default async function handler(req, res) {
         },
         {
           headers: {
-            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+            Authorization: `Bearer ${apiKey}`,
             "Content-Type": "application/json",
           },
         }
