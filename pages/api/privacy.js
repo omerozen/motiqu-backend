@@ -1,10 +1,14 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+import Cors from 'cors';
+import initMiddleware from '../../lib/init-middleware';
+import privacy from '../../data/privacy.json';
+
+const cors = initMiddleware(
+  Cors({
+    methods: ['GET'],
+  })
+);
 
 export default async function handler(req, res) {
-  const filePath = path.join(process.cwd(), 'data', 'privacy.json');
-  const fileContents = await fs.readFile(filePath, 'utf8');
-  const privacy = JSON.parse(fileContents);
-
+  await cors(req, res);
   res.status(200).json(privacy);
 }
