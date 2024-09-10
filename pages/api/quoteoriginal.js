@@ -1,4 +1,4 @@
-// pages/api/quote.js
+// pages/api/quoteoriginal.js
 import axios from "axios";
 import Cors from 'cors';
 

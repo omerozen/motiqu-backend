@@ -1,5 +1,37 @@
-{
-  "version": "3.0.14",
-  "content": "Now Version 3.0.14"
+{ 
+  "EN": {
+    "title": "Terms and Conditions, Privacy Policy",
+    "versionText": "Latest version: ",
+    "version": "3.0.14",
+    "content": "Now Version: ",
+    "readAndAcceptText":  "I have read and accept the terms and conditions and privacy policy",
+    "acceptButtonText": "Accept"
+  },
+
+  "TR": {
+    "title": "Kullanım Koşulları, Gizlilik Politikası",
+    "versionText": "Son sürüm: ",
+    "version": "3.0.14",
+    "content": "Şimdi Sürüm: ",
+    "readAndAcceptText":  "Kullanım koşullarını ve gizlilik politikasını okudum ve kabul ediyorum",
+    "acceptButtonText": "Kabul et"
+  },
+
+  "ES": {
+    "title": "Términos y Condiciones, Política de Privacidad",
+    "versionText": "Última versión: ",
+    "version": "3.0.14",
+    "content": "Ahora Versión:",
+    "readAndAcceptText":  "He leído y acepto los términos y condiciones y la política de privacidad",
+    "acceptButtonText": "Aceptar"
+  },
+  "DE": {
+    "title": "Nutzungsbedingungen, Datenschutzbestimmungen",
+    "versionText": "Neueste Version: ",
+    "version": "3.0.14",
+    "content": "Jetzt Version: ",
+    "readAndAcceptText":  "Ich habe die Nutzungsbedingungen und Datenschutzbestimmungen gelesen und akzeptiere sie",
+    "acceptButtonText": "Akzeptieren"
+  }
 }
   

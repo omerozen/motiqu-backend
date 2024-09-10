@@ -1,0 +1,38 @@
+{
+    "EN": {
+       "myParents": {
+            "value": "My Parents",
+            "translation": "My Parents"
+       },
+        "myKids": {
+                "value": "My Children",
+                "translation": "My Children"
+         },
+         "myJob": {
+                "value": "My Job",
+                "translation": "My Job"
+         },
+         "myLove": {
+                "value": "My Love, my wife, my husband",
+                "translation": "My Love"
+         },
+         "studying": {
+                "value": "Studying",
+                "translation": "Studying"
+         },
+         "sports": {
+                "value": "Doing sports or exercising",
+                "translation": "Sports and Exercise"
+         },
+         "illness": {
+                "value": "Fighting with my illness",
+                "translation": "My Illness"
+         },
+        "life": {
+                "value": "My general life",
+                "translation": "General Life"
+         }
+
+
+    }
+}
