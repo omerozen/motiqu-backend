@@ -1,33 +1,22 @@
 // pages/api/terms.js
 import initMiddleware from '../../lib/init-middleware';
 import { apiKeyMiddleware } from '../../lib/api-key-middleware';
-import path from 'path';
-import fs from 'fs/promises';
+import terms from '../../data/terms.json'; // Make sure this path and file exist
 
 const apiKeyValidator = initMiddleware(apiKeyMiddleware);
 
 export default async function handler(req, res) {
-  await apiKeyValidator(req, res);
+  try {
+    await apiKeyValidator(req, res); // Ensure this middleware is working correctly
 
-  if (req.method === 'GET') {
-    const lang = req.query.lang || 'EN'; // Default to English if no language specified
-    const filePath = path.join(process.cwd(), 'data/terms/terms.json');
-
-    try {
-      const data = await fs.readFile(filePath, 'utf8');
-      const terms = JSON.parse(data);
-
-      if (terms[lang]) {
-        res.status(200).json(terms[lang]);
-      } else {
-        res.status(404).json({ error: 'Language not supported' });
-      }
-    } catch (error) {
-      console.error('Error fetching terms:', error);
-      res.status(500).json({ error: 'Failed to load terms and conditions' });
+    if (req.method === 'GET') {
+      res.status(200).json(terms);
+    } else {
+      res.setHeader('Allow', ['GET']);
+      res.status(405).end(`Method ${req.method} Not Allowed`);
     }
-  } else {
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+  } catch (error) {
+    console.error('Error in /api/terms:', error); // Log error details
+    res.status(500).json({ message: 'Internal Server Error' });
   }
 }
