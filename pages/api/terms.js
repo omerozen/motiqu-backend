@@ -1,22 +1,33 @@
 // pages/api/terms.js
 import initMiddleware from '../../lib/init-middleware';
 import { apiKeyMiddleware } from '../../lib/api-key-middleware';
-import terms from '../../data/terms.json'; // Make sure this path and file exist
+import termsData from '../../data/terms.json';
+import Cors from 'cors';
+
+const cors = initMiddleware(
+  Cors({
+    methods: ['GET', 'OPTIONS'],
+    origin: '*',
+  })
+);
 
 const apiKeyValidator = initMiddleware(apiKeyMiddleware);
 
 export default async function handler(req, res) {
-  try {
-    await apiKeyValidator(req, res); // Ensure this middleware is working correctly
+  await cors(req, res);
+  await apiKeyValidator(req, res);
 
-    if (req.method === 'GET') {
+  const { lang } = req.query;
+
+  if (req.method === 'GET') {
+    try {
+      const terms = termsData[lang] || termsData['EN'];
       res.status(200).json(terms);
-    } else {
-      res.setHeader('Allow', ['GET']);
-      res.status(405).end(`Method ${req.method} Not Allowed`);
+    } catch (error) {
+      res.status(500).json({ message: 'Failed to load terms content.' });
     }
-  } catch (error) {
-    console.error('Error in /api/terms:', error); // Log error details
-    res.status(500).json({ message: 'Internal Server Error' });
+  } else {
+    res.setHeader('Allow', ['GET']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }

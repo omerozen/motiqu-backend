@@ -1,33 +1,27 @@
-// pages/api/translations/[lang].js (Backend)
-import path from 'path';
-import fs from 'fs/promises'; // Using promises with fs for async/await
+// pages/api/translations/[lang].js
+import initMiddleware from '../../../lib/init-middleware';
+import { apiKeyMiddleware } from '../../../lib/api-key-middleware';
+import Cors from 'cors';
+import { loadLanguagePack } from '../../../lib/languageLoader'; // Assumed function to load language packs
 
-// API route to serve language JSON files
+const cors = initMiddleware(
+  Cors({
+    methods: ['GET', 'OPTIONS'],
+    origin: '*',
+  })
+);
+
 export default async function handler(req, res) {
-  // Extract language code from the request (e.g., 'EN', 'TR')
+  await cors(req, res);
+  await apiKeyMiddleware(req, res);
+
   const { lang } = req.query;
 
-  // Path to the language file in the 'data' directory
-  const languageFilePath = path.join(process.cwd(), 'data', `${lang}.json`);
-
-  if (req.method === 'GET') {
-    try {
-      // Attempt to read the requested language file
-      const languageData = await fs.readFile(languageFilePath, 'utf-8');
-      // Respond with the file content as JSON
-      res.status(200).json(JSON.parse(languageData));
-    } catch (error) {
-      // Handle the case where the file does not exist
-      if (error.code === 'ENOENT') {
-        res.status(404).json({ message: `Language package for ${lang} not found.` });
-      } else {
-        // Handle other potential errors
-        res.status(500).json({ message: 'Failed to load language package', error: error.message });
-      }
-    }
-  } else {
-    // Respond with an error if the request method is not GET
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+  try {
+    const translations = await loadLanguagePack(lang);
+    res.status(200).json(translations);
+  } catch (error) {
+    console.error(`Failed to load language pack: ${error}`);
+    res.status(500).json({ message: 'Failed to load language pack.' });
   }
 }
