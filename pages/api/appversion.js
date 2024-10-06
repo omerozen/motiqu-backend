@@ -1,5 +1,5 @@
 // pages/api/appversion.js
-import validateApiKey from '../../lib/middleware/validateApiKey';
+import validateApiKey from '../../middleware/validateApiKey';
 
 export default function handler(req, res) {
   validateApiKey(req, res, () => {

@@ -1,5 +1,5 @@
 // pages/api/translations/[lang].js
-import validateApiKey from '../../../lib/middleware/validateApiKey'
+import validateApiKey from '../../../middleware/validateApiKey'
 import path from 'path';
 import fs from 'fs';
 
