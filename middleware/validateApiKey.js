@@ -1,11 +1,14 @@
-// lib/middleware/validateApiKey.js
-  export const validateApiKey = async (req, res) => {
-    const apiKey = req.headers['authorization'];
-    const VALID_API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-  
-    if (!apiKey || apiKey !== `Bearer ${VALID_API_KEY}`) {
-      res.status(401).json({ error: 'Unauthorized access - Invalid API Key' });
-      throw new Error('Unauthorized');
-    }
-  };
-  
+// middleware/validateApiKey.js
+
+const validateApiKey = (req, res, next) => {
+  const apiKey = req.headers['x-api-key'];
+  const validApiKey = process.env.NEXT_PUBLIC_API_KEY;
+
+  if (!apiKey || apiKey !== validApiKey) {
+    return res.status(401).json({ error: 'Unauthorized access - Invalid API Key' });
+  }
+  next(); // Proceed to the next handler if API key is valid
+};
+
+// Correct export method for middleware
+export default validateApiKey;
