@@ -1,0 +1,22 @@
+{
+    "language": "Deutsch",
+    "languageCode": "DE",
+    "screens" : {
+        "contentVersion": "0.0.1",
+        "contents" : {
+            "Onboarding1": {
+                "welcomingText": "Willkommen bei Motiqu",
+                "chooseLanguageText": "Bitte wählen Sie eine Sprache",
+                "changeLanguageLater": "Sie können die Sprache später ändern"
+            },
+            "Onboarding2": {
+                "whatIsMotiquText": "Was ist Motiqu?",
+                "whatIsMotiquDescription": "Motiqu Beschreibung"
+            },
+            "Onboarding3": {
+                "howToUseMotiquText": "Wie benutzt man Motiqu?",
+                "howToUseMotiquDescription": "Wie man Motiqu verwendet, Beschreibung"
+            }
+        }
+    }
+}

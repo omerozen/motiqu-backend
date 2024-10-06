@@ -1,40 +1,23 @@
 {
-    "content": {
-        "EN": {
-            "HomeScreen": {
-                "title": "Home",
-                "notSignedIn": "Not Signed In",
-                "bonusCredit": "Bonus Credit: ",
-                "dailyCredit": "Daily Credit: ",
-                "motiquButton": "Motiqu",
-                "yourQuote": "Your quote will appear here"
+    "language": "English",
+    "languageCode": "EN",
+    "screens" : {
+        "contentVersion": "0.0.1",
+        "contents" : {
+            "Onboarding1": {
+                "welcomingText": "Welcome to Motiqu",
+                "chooseLanguageText": "Please choose language",
+                "changeLanguageLater": "you can change language later"
             },
-            "ProfileScreen": {
-                "title": "Profile",
-                "youAreNotSignedIn": "You are not signed in yet",
-                "signIn": "Sign In"
+            "Onboarding2": {
+                "whatIsMotiquText": "What is Motiqu?",
+                "whatIsMotiquDescription": "Motiqu Description"
             },
-            "AboutScreen": {
-                "title": "About",
-                "head": "About MotiQu",
-                "aboutText": "Motiqu is a mobile application that provides you with a daily motivational quote. You can also share your own quotes with the world. The app is available for both Android and iOS devices.",
-                "version": "Version: 1.0.0",
-                "developedBy": "Developed by:",
-                "companyName": "Coreborn",
-                "visitUs": "Visit us",
-                "website": "coreborn.com",
-                "contactUs": "Contact Us",
-                "email": "contact@motiqu.com"
-            },
-            "SettingsScreen": {
-                "title": "Settings"
-            },
-            "SignInScreen": {
-                "title": "Sign In",
-                "signIn": "Sign In",
-                "signInWithGoogle": "Sign In with Google",
-                "signInWithApple": "Sign In with Apple"
+            "Onboarding3": {
+                "howToUseMotiquText": "How to use Motiqu?",
+                "howToUseMotiquDescription": "How to use Motiqu Description"
             }
         }
     }
 }
+

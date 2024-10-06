@@ -1,27 +1,33 @@
-// pages/api/translations/[lang].js
-import initMiddleware from '../../../lib/init-middleware';
-import { apiKeyMiddleware } from '../../../lib/api-key-middleware';
-import Cors from 'cors';
-import { loadLanguagePack } from '../../../lib/languageLoader'; // Correct import
+import path from 'path';
+import fs from 'fs';
 
-const cors = initMiddleware(
-  Cors({
-    methods: ['GET', 'OPTIONS'],
-    origin: '*', // Adjust this according to your CORS policy
-  })
-);
+const langDataPath = path.join(process.cwd(), 'data');
 
 export default async function handler(req, res) {
-  await cors(req, res);
-  await apiKeyMiddleware(req, res);
-
   const { lang } = req.query;
 
+  // Secure the API using NEXT_PUBLIC_API_KEY
+  const apiKey = req.headers['authorization'];
+  const VALID_API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+
+  if (!apiKey || apiKey !== `Bearer ${VALID_API_KEY}`) {
+    return res.status(401).json({ error: 'Unauthorized access - Invalid API Key' });
+  }
+
   try {
-    const translations = await loadLanguagePack(lang);
-    res.status(200).json(translations);
+    // Read and validate the requested language file
+    const filePath = path.join(langDataPath, `${lang}.json`);
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ error: 'Language file not found' });
+    }
+
+    // Read the language JSON content
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const langData = JSON.parse(fileContent);
+
+    res.status(200).json(langData);
   } catch (error) {
-    console.error(`Failed to load language pack: ${error.message}`);
-    res.status(500).json({ message: 'Failed to load language pack.' });
+    console.error(`Error fetching language file for ${lang}:`, error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }

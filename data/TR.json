@@ -1,39 +1,21 @@
 {
-    "content": {
-        "TR": {
-            "HomeScreen": {
-                "title": "Ana Sayfa",
-                "notSignedIn": "Giriş Yapılmadı",
-                "bonusCredit": "Bonus Kredi: ",
-                "dailyCredit": "Günlük Kredi: ",
-                "motiquButton": "Motiqu",
-                "yourQuote": "Alıntınız burada görünecek"
+    "language": "Türkçe",
+    "languageCode": "TR",
+    "screens" : {
+        "contentVersion": "0.0.1",
+        "contents" : {
+            "Onboarding1": {
+                "welcomingText": "Motiqu'ya Hoşgeldiniz",
+                "chooseLanguageText": "Lütfen dil seçiniz",
+                "changeLanguageLater": "Dili daha sonra değiştirebilirsiniz"
             },
-            "ProfileScreen": {
-                "title": "Profil",
-                "youAreNotSignedIn": "Henüz giriş yapmadınız",
-                "signIn": "Giriş Yap"
+            "Onboarding2": {
+                "whatIsMotiquText": "Motiqu Nedir?",
+                "whatIsMotiquDescription": "Motiqu Açıklama"
             },
-            "AboutScreen": {
-                "title": "Hakkında",
-                "head": "MotiQu Hakkında",
-                "aboutText": "Motiqu, size günlük bir motivasyon alıntısı sunan bir mobil uygulamadır. Kendi alıntılarınızı da dünyayla paylaşabilirsiniz. Uygulama, hem Android hem de iOS cihazlar için kullanılabilir.",
-                "version": "Sürüm: 1.0.0",
-                "developedBy": "Geliştiren:",
-                "companyName": "Coreborn",
-                "visitUs": "Bizi ziyaret edin",
-                "website": "coreborn.com",
-                "contactUs": "Bize ulaşın",
-                "email": "contact@motiqu.com"
-            },
-            "SettingsScreen": {
-                "title": "Ayarlar"
-            },
-            "SignInScreen": {
-                "title": "Sign In",
-                "signIn": "Sign In",
-                "signInWithGoogle": "Google ile giriş yap",
-                "signInWithApple": "Apple ile giriş yap"
+            "Onboarding3": {
+                "howToUseMotiquText": "Motiqu Nasıl Kullanılır?",
+                "howToUseMotiquDescription": "Motiqu Nasıl Kullanılır Açıklama"
             }
         }
     }
