@@ -24,6 +24,7 @@ export default async function handler(req, res) {
       return res.status(200).send(fileContents);
     } else {
       console.log(`Language file not found for: ${lang}`);  // Log error message if file not found
+      console.log("File Path being used:", filePath);  // Log the file path for debugging
       return res.status(404).json({ error: 'Language file not found' });
     }
   } catch (error) {
