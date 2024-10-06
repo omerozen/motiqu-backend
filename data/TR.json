@@ -5,17 +5,17 @@
         "contentVersion": "0.0.1",
         "contents" : {
             "Onboarding1": {
-                "welcomingText": "Motiqu'ya Hoşgeldiniz",
-                "chooseLanguageText": "Lütfen dil seçiniz",
+                "welcomingText": "Motiqu'e hoşgeldiniz",
+                "chooseLanguageText": "Lütfen bir dil seçin",
                 "changeLanguageLater": "Dili daha sonra değiştirebilirsiniz"
             },
             "Onboarding2": {
-                "whatIsMotiquText": "Motiqu Nedir?",
+                "whatIsMotiquText": "Motiqu nedir?",
                 "whatIsMotiquDescription": "Motiqu Açıklama"
             },
             "Onboarding3": {
-                "howToUseMotiquText": "Motiqu Nasıl Kullanılır?",
-                "howToUseMotiquDescription": "Motiqu Nasıl Kullanılır Açıklama"
+                "howToUseMotiquText": "Motiqu nasıl kullanılır?",
+                "howToUseMotiquDescription": "Motiqu nasıl kullanılır Açıklama"
             }
         }
     }
