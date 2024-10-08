@@ -11,7 +11,7 @@
   "TR": {
     "title": "Kullanım Koşulları, Gizlilik Politikası",
     "versionText": "Son sürüm: ",
-    "version": "3.0.14",
+    "version": "3.0.15",
     "content": "Şimdi Sürüm: ",
     "readAndAcceptText":  "Kullanım koşullarını ve gizlilik politikasını okudum ve kabul ediyorum",
     "acceptButtonText": "Kabul Ediyorum"
@@ -20,7 +20,7 @@
   "FR": {
     "title": "Conditions d'utilisation, Politique de confidentialité",
     "versionText": "Dernière version: ",
-    "version": "3.0.14",
+    "version": "3.0.15",
     "content": "Maintenant Version: ",
     "readAndAcceptText":  "J'ai lu et j'accepte les conditions d'utilisation et la politique de confidentialité",
     "acceptButtonText": "Accepter"
@@ -28,7 +28,7 @@
   "DE": {
     "title": "Nutzungsbedingungen, Datenschutzbestimmungen",
     "versionText": "Neueste Version: ",
-    "version": "3.0.14",
+    "version": "3.0.15",
     "content": "Jetzt Version: ",
     "readAndAcceptText":  "Ich habe die Nutzungsbedingungen und Datenschutzbestimmungen gelesen und akzeptiere sie",
     "acceptButtonText": "Akzeptieren"
