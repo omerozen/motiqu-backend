@@ -16,6 +16,10 @@
             "Onboarding3": {
                 "howToUseMotiquText": "Motiqu nasıl kullanılır?",
                 "howToUseMotiquDescription": "Motiqu nasıl kullanılır Açıklama"
+            },
+            "updateApp": {
+                "updateMessage": "Devam etmek için lütfen uygulamayı güncelleyin.",
+                "buttonText": "Uygulamayı Güncelle"
             }
         }
     }

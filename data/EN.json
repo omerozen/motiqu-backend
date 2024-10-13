@@ -16,7 +16,12 @@
             "Onboarding3": {
                 "howToUseMotiquText": "How to use Motiqu?",
                 "howToUseMotiquDescription": "How to use Motiqu Description"
+            },
+            "updateApp": {
+                "updateMessage": "Please update the app to keep using.",
+                "buttonText": "Update App"
             }
+
         }
     }
 }

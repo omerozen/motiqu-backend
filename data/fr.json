@@ -16,7 +16,10 @@
             "Onboarding3": {
                 "howToUseMotiquText": "Comment utiliser Motiqu?",
                 "howToUseMotiquDescription": "Description sur l'utilisation de Motiqu"
-            }
+            },
+            "updateApp": {
+                "updateMessage": "Veuillez mettre à jour l'application pour continuer à l'utiliser.",
+                "buttonText": "Mettre à jour l'application"
         }
     }
 }

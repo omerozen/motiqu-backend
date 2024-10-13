@@ -16,6 +16,10 @@
             "Onboarding3": {
                 "howToUseMotiquText": "Wie benutzt man Motiqu?",
                 "howToUseMotiquDescription": "Wie man Motiqu verwendet, Beschreibung"
+            },
+            "updateApp": {
+                "updateMessage": "Bitte aktualisieren Sie die App, um weiterhin zu verwenden.",
+                "buttonText": "App aktualisieren"
             }
         }
     }
